@@ -12,13 +12,13 @@
 
 # Create a BLOBSTORAGE by using Python #
 * Open your editor terminal and install the Azure Storage Blob library for Python
-* Create a new .py file, you can name it whatever you want.
+* Create a new .py file, you can name it.
 
 * `pip install azure-storage-blob`
 * **Before we start we need our Account Access Key**
 * ![InkedBlobstorageConnectString_LI](https://user-images.githubusercontent.com/81914415/113557499-c55b5780-9606-11eb-817b-f3f2a8a629e7.jpg)
 
-* **We are going to use the library to connect our blobstorage that's why we need to import.**
+* **We are going to use the library to connect our blobstorage that's why we need to import;**
 * `from azure.storage.blob import BlobClient, BlobServiceClient, ContainerClient`
 * `import os`
 
