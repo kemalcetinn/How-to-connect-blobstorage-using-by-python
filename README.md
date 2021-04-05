@@ -18,7 +18,7 @@
 * **Before we start we need our Account Access Key**
 * ![InkedBlobstorageConnectString_LI](https://user-images.githubusercontent.com/81914415/113557499-c55b5780-9606-11eb-817b-f3f2a8a629e7.jpg)
 
-* **We are going to use the library to connect our blobstorage that's why we need to import;**
+* **We need to import the library to connect to the blobstorage;**
 * `from azure.storage.blob import BlobClient, BlobServiceClient, ContainerClient`
 * `import os`
 
