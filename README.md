@@ -20,8 +20,20 @@
 
 * We are going to use the library to connect our blobstorage that's why we need to import.
 * `from azure.storage.blob import BlobClient, BlobServiceClient, ContainerClient`
-* `import os
+* `import os`
 
 * We need to create the BlobServiceClient object which will be used to create a container client.
 * `connect_str = 'YOUR_CONNECTION_STRING'`
 * `blob = BlobServiceClient.from_connection_string(connect_str)`
+
+* Create a name for the container
+* `container_name = 'projectblob'`
+* Create the container
+* `container_client = blob.create_container(container_name)`
+* Create a local directory to hold blob data
+* `local_path = "./data"`
+* `os.mkdir(local_path)`
+
+*  Create a file in the local data directory to upload and download
+ `local_file_name = 'denemetutorial2' + ".txt"`
+ `upload_file_path = os.path.join(local_path, local_file_name)`
