@@ -28,8 +28,10 @@
 
 * **Create a name for the container**
 * `container_name = 'NAME_YOUR_CONTAINER'`
+
 * **Create the container**
 * `container_client = PROJECT.create_container(container_name)`
+
 * **Create a local directory to hold blob data**
 * `local_path = "./data"`
 * `os.mkdir(local_path)`
@@ -37,3 +39,15 @@
 * **Create a file in the local data directory to upload and download**
 * `local_file_name = container_name + ".txt"`
 * `upload_file_path = os.path.join(local_path, local_file_name)`
+
+* **Write text to the file** *Also we can read*
+* `file = open(upload_file_path, 'w')`
+* `file.write("Hello, World! We can create a new text here and we can upload this file.")`
+* `file.close()
+
+* **Create a blob client using the local file name as the name for the blob**
+* `project_client = PROJECT.get_blob_client(container=container_name, blob=local_file_name)`
+
+* **Upload the created file**
+* `with open(upload_file_path, "rb") as data:`
+*  `      project_client.upload_blob(data)`
