@@ -40,7 +40,7 @@
 * `local_file_name = container_name + ".txt"`
 * `upload_file_path = os.path.join(local_path, local_file_name)`
 
-* **Write text to the file** *Also we can read*
+* **Write text to the file**
 * `file = open(upload_file_path, 'w')`
 * `file.write("Hello, World! We can create a new text here and we can upload this file.")`
 * `file.close()
@@ -54,4 +54,4 @@
 
 * **IMPORTANT NOTE**
 * `ErrorCode:ContainerBeingDeleted` If you get this error, you need to change the container name.
-* This caused by if you delete the container and recreate.
+* This caused if you delete the container and recreate.
