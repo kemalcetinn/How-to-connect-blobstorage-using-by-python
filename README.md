@@ -50,4 +50,8 @@
 
 * **Upload the created file**
 * `with open(upload_file_path, "rb") as data:`
-*  `      project_client.upload_blob(data)`
+    *  `      project_client.upload_blob(data)`
+
+* **IMPORTANT NOTE**
+* `ErrorCode:ContainerBeingDeleted` If you get this error, you need to change the container name.
+* This caused by if you delete the container and recreate.
