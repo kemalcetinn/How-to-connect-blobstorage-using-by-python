@@ -54,4 +54,4 @@
 
 * **IMPORTANT NOTE**
 * `ErrorCode:ContainerBeingDeleted` If you get this error, you need to change the container name.
-* This caused if you delete the container and recreate.
+* This error is caused when you delete the container and recreate.
