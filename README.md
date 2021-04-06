@@ -32,7 +32,7 @@
 * **Uploading a blob**
 * `blob = BlobClient.from_connection_string(conn_str=connection_string, container_name="CONTAINER_NAME", blob_name="BLOB_NAME_YOUR_CHOICE")`
 * `with open("./<YOUR_FILE_NAME>.txt", "rb") as data:`
-       * `blob.upload_blob(data)`
+*       `blob.upload_blob(data)`
         
 *![uploadblobfile](https://user-images.githubusercontent.com/81914415/113784504-3baea580-973e-11eb-82d5-1fc62f3b60dd.jpg)
 
