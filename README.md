@@ -20,7 +20,7 @@
 
 * **We need to import the library to create, upload and download the blobstorage;**
 * `from azure.storage.blob import BlobClient, ContainerClient`
-* 
+
 * **We can specify connection string and container name to make easier.**
 * `connection_string = "YOUR_CONNECTION_STRING"`
 * `container_name = "YOUR_CONTAINER_NAME"`
@@ -33,12 +33,26 @@
 * `blob = BlobClient.from_connection_string(conn_str=connection_string, container_name="CONTAINER_NAME", blob_name="BLOB_NAME_YOUR_CHOICE")`
 * `with open("./<YOUR_FILE_NAME>.txt", "rb") as data:`
         `blob.upload_blob(data)`
+        
+*![uploadblobfile](https://user-images.githubusercontent.com/81914415/113784504-3baea580-973e-11eb-82d5-1fc62f3b60dd.jpg)
+
              
 * **Downloading a blob**
 * `blob = BlobClient.from_connection_string(conn_str=connection_string, container_name="CONTAINER_NAME", blob_name="BLOB_NAME")`
 *` with open("./<YOUR_FILE_NAME>..txt", "wb") as x:`
      `blob_data = blob.download_blob()`
      `blob_data.readinto(x)`
+     
+*![downloadblobfile](https://user-images.githubusercontent.com/81914415/113784532-4832fe00-973e-11eb-8dea-01f34722b34c.jpg)
+
+* **List the blobs in your container**
+*`container = ContainerClient.from_connection_string(conn_str="my_connection_string", container_name="my_container")`
+
+*`blob_list = container.list_blobs()`
+*  `for blob in blob_list:`
+       `print(blob.name + '\n')`
+
+* ![listing](https://user-images.githubusercontent.com/81914415/113784937-ddce8d80-973e-11eb-92bb-cdc41b215919.jpg)
 
 
 * **IMPORTANT NOTE**
