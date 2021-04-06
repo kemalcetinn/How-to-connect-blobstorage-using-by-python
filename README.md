@@ -40,8 +40,8 @@
 * **Downloading a blob**
 * `blob = BlobClient.from_connection_string(conn_str=connection_string, container_name="CONTAINER_NAME", blob_name="BLOB_NAME")`
 * `with open("./<YOUR_FILE_NAME>..txt", "wb") as x:`
-*       `blob_data = blob.download_blob()`
-*       `blob_data.readinto(x)`
+* `blob_data = blob.download_blob()`
+* `blob_data.readinto(x)`
      
 *![downloadblobfile](https://user-images.githubusercontent.com/81914415/113784532-4832fe00-973e-11eb-8dea-01f34722b34c.jpg)
 
