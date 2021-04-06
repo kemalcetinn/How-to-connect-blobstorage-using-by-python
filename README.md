@@ -18,39 +18,28 @@
 * **Before we start we need our Account Access Key**
 * ![InkedBlobstorageConnectString_LI](https://user-images.githubusercontent.com/81914415/113557499-c55b5780-9606-11eb-817b-f3f2a8a629e7.jpg)
 
-* **We need to import the library to connect to the blobstorage;**
-* `from azure.storage.blob import BlobClient, BlobServiceClient, ContainerClient`
-* `import os`
-
-* **We need to create the BlobServiceClient object which will be used to create a container client.**
-* `connect_str = 'YOUR_CONNECTION_STRING'`
-* `PROJECT = BlobServiceClient.from_connection_string(connect_str)`
-
-* **Create a name for the container**
-* `container_name = 'NAME_YOUR_CONTAINER'`
+* **We need to import the library to create, upload and download the blobstorage;**
+* `from azure.storage.blob import BlobClient, ContainerClient`
+* 
+* **We can specify connection string and container name to make easier.**
+* `connection_string = "YOUR_CONNECTION_STRING"`
+* `container_name = "YOUR_CONTAINER_NAME"`
 
 * **Create the container**
-* `container_client = PROJECT.create_container(container_name)`
+* `container_client = ContainerClient.from_connection_string(conn_str=connection_string, container_name=container_name)`
+* `container_client.create_container()`
 
-* **Create a local directory to hold blob data**
-* `local_path = "./data"`
-* `os.mkdir(local_path)`
+* **Uploading a blob**
+* `blob = BlobClient.from_connection_string(conn_str=connection_string, container_name="CONTAINER_NAME", blob_name="BLOB_NAME_YOUR_CHOICE")`
+* `with open("./<YOUR_FILE_NAME>.txt", "rb") as data:`
+        `blob.upload_blob(data)`
+             
+* **Downloading a blob**
+* `blob = BlobClient.from_connection_string(conn_str=connection_string, container_name="CONTAINER_NAME", blob_name="BLOB_NAME")`
+*` with open("./<YOUR_FILE_NAME>..txt", "wb") as x:`
+     `blob_data = blob.download_blob()`
+     `blob_data.readinto(x)`
 
-* **Create a file in the local data directory to upload and download**
-* `local_file_name = container_name + ".txt"`
-* `upload_file_path = os.path.join(local_path, local_file_name)`
-
-* **Write text to the file**
-* `file = open(upload_file_path, 'w')`
-* `file.write("Hello, World! We can create a new text here and we can upload this file.")`
-* `file.close()
-
-* **Create a blob client using the local file name as the name for the blob**
-* `project_client = PROJECT.get_blob_client(container=container_name, blob=local_file_name)`
-
-* **Upload the created file**
-* `with open(upload_file_path, "rb") as data:`
-    *  `      project_client.upload_blob(data)`
 
 * **IMPORTANT NOTE**
 * `ErrorCode:ContainerBeingDeleted` If you get this error, you need to change the container name.
